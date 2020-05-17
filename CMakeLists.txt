@@ -19,11 +19,9 @@ endif ()
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 # Check for packages
-INCLUDE(FindPkgConfig)
-pkg_check_modules(LOG4CPP "log4cpp")
+INCLUDE(FindPkgConfig)  
 
 # INCLUDES
-include_directories(${LOG4CPP_INCLUDE_DIRS})
 include_directories(include)
 
 # SOURCES
@@ -36,7 +34,7 @@ add_library(klv SHARED ${SOURCES})
 # LINKING
 # target_link_libraries(libklv z) # zlib
 # target_link_libraries(libklv m) # math
-target_link_libraries(klv ${LOG4CPP_LIBRARIES})
+target_link_libraries(klv)
 
 # TESTING
 # TESTING
